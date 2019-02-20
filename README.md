@@ -1,0 +1,10 @@
+CREATE TABLE items (items_id  integer PRIMARY KEY, items_name varchar(40), items_weight varchar(30), item_price varchar(30));
+INSERT INTO items VALUES (1, 'notebook', 5000, 300); 
+INSERT INTO items VALUES (2, 'keyboard', 800, 20);
+INSERT INTO items VALUES (3, 'mouse', 100, 10);
+INSERT INTO items VALUES (4, 'headphone', 20, 10);
+INSERT INTO items VALUES (5, 'monitor', 3000, 100);
+INSERT INTO items VALUES (6, 'chair', 7000, 100); 
+SELECT byers.name, accounts.login, items_name FROM byers JOIN accounts ON byers.id = accounts.accounts_id JOIN items ON items.items_id = byers.id AND items.item_price = '300';
+SELECT byers.name, accounts.login, items_name FROM byers JOIN accounts ON byers.id = accounts.accounts_id JOIN items ON items.items_id = byers.id AND items.item_price = '10';
+UPDATE items SET item_price = 125 WHERE item_price = '100';
